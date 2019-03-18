@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Zadanie 5. Metoda .reduce()</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+<body>
+
+	<script>
+
+		var owoce = ['Kiwi', 'Mango', 'Ananas', 'Grapefruit'];
+
+		/*
+
+		- Mając tablicę z owocami, "zredukuj" ją w ten sposób, by skleić wszystkie jej elementy w jeden wyraz. Otrzymany w ten sposób wyraz wytłuść. Poprzedź go napisem Owoce sklejone w jeden wyraz: (co ważne, skorzystaj w tym celu z opcjonalnego drugiego parametru metody .reduce(), którym jest initial value).
+		
+		- Wyprowadź na ekran otrzymany w ten sposób wyraz, umieszczając go jako zawartość body. Dodatkowo, doklej pod spodem informację o zwróconym typie danych. Otrzymany w ten sposób typ danych wytłuść.
+		
+		- Skorzystaj z - wywoływanej na rzecz tablicy, którą chcemy "zredukować" do pojedynczej wartości - metody .reduce().
+
+		- Wykorzystaj napisaną przez siebie funkcję renderującą render.
+
+		*/
+
+
+		const reducedFruit = owoce.reduce((reduced, element, index, array) => reduced += element,  'Owoce sklejone w jeden wyraz: ')
+		console.log(reducedFruit)
+
+		const render = (what, where) => {
+
+			what = owoce.reduce((reduced, element, index, array) => reduced += element, 'Owoce sklejone w jeden wyraz: ');
+			const bold = document.createElement('b');
+			where.insertBefore(bold, where.firstChild).innerHTML = what + '</br>'
+			where.innerHTML += 'Type of element: ' + typeof what;
+		}
+
+		const fruitReduced = ''
+		const body = document.body
+		render(fruitReduced, body)
+
+
+	</script>
+
+</body>
+</html>
