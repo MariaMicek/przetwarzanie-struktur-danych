@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Zadanie 1. Typ złożony &mdash; array (tablica)</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+<body>
+
+	<script>
+
+		// a)
+
+		var kontynenty = ['Europa', 'Azja', 'Antarktyda', 'Afryka', 'Australia i Oceania', 'Ameryka Północna', 'Ameryka Południowa'];
+
+		/*
+		
+		- Mając tablicę z nazwami kontynentów, posortuj ją alfabetycznie, a następnie odwróć kolejność jej elementów.
+		
+		- Wykorzystaj napisaną przez siebie funkcję renderującą o nazwie renderA.
+
+		*/
+
+
+		console.log(kontynenty.sort());
+		console.log(kontynenty.reverse());
+		
+		const renderA = myArray => {
+			console.log(myArray.sort());
+			console.log(myArray.reverse());
+		};
+
+		renderA(kontynenty)
+
+
+		
+		// b)
+
+		var liczby = [1, 12, 13, 0, 2, 20, 9, 3, 22, 10, -2, 11];
+
+		/*
+		
+		- Mając tablicę z liczbami, napisz funkcję, która posortuj je rosnąco. Następnie napisz funkcję, która posortuje je malejąco.
+
+		- Wykorzystaj napisaną przez siebie funkcję renderującą o nazwie renderB.
+
+		*/
+
+
+		const renderB = myArray => {
+			console.log(myArray.sort((x, y) => x - y));
+			console.log(myArray.reverse((x, y) => y - x));
+		};
+		
+		renderB(liczby);
+
+	</script>
+
+</body>
+</html>
