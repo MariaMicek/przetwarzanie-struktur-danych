@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Zadanie 3. Metoda .map()</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+<body>
+
+	<script>
+
+		var owoce = ['Kiwi', 'Mango', 'Ananas', 'Grapefruit'];
+
+		/*
+
+		- Mając tablicę z owocami, stwórz na jej podstawie nową tablicę, dopisując do każdego jej elementu frazę - obszar uprawy: tereny tropikalne. Nazwę owocu wytłuść.
+		
+		- Wyprowadź na ekran tę nową tablicę, umieszczając ją jako zawartość body. Dodatkowo, do tej zawartości doklej pod spodem informację potwierdzającą, że ta nowa tablica jest rzeczywiście tablicą. Otrzymaną w ten sposób wartość logiczną wytłuść.
+		
+		- Skorzystaj z - wywoływanej na rzecz oczywiście tej oryginalnej tablicy - metody .map().
+
+		- Wykorzystaj napisaną przez siebie funkcję renderującą render.
+
+		*/
+
+		// NEW ARRAY
+		let newFruit = owoce.map( (element, index, array) => '<strong>' + element + '</strong>' + ' - obszar uprawy: tereny tropiklalne');
+		console.log(newFruit)
+
+		//RENDER FUNCTION
+		const render = (what, where) => {
+
+			what = owoce.map( (element, index, array) => '<br>' + '<strong>' + element + '</strong>' + ' - obszar uprawy: tereny tropiklalne');
+			where.innerHTML = what;
+		}
+
+		const newArray = []
+		const body = document.body;
+		render(newArray,body)
+
+		//AS A LIST
+		const newList = (myArray) => {
+
+			const body = document.querySelector('body');
+			let list = document.createElement('ol');
+			body.insertBefore(list, body.childNodes[0]);
+
+			myArray.forEach( (element, index, array) => { list.innerHTML += '<li>' + element + " (" + index + ")" + '</li>'})
+
+		}
+
+		newList(newFruit)
+
+
+	</script>
+
+</body>
+</html>
