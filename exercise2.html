@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Zadanie 2. Metoda .forEach()</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+<body>
+
+	<script>
+
+		/*
+
+		- Mając tablicę z owocami, tak przetwórz każdy jej element, by wygenerować listę numerowaną odpowiadającą poszczególnym elementom tablicy. Wygenerowany w ten sposób kod HTML umieść jako zawartość body.
+		
+		- Każdy element listy powinien zawierać nazwę odpowiedniego elementu z tablicy oraz (w nawiasie) jego indeks z tablicy. Dodatkowo, doklej pod spodem informację o zwróconym typie danych. Otrzymany w ten sposób typ danych wytłuść.
+		
+		- Skorzystaj z - wywoływanej na rzecz tablicy - metody .forEach().
+
+		- Wykorzystaj napisaną przez siebie funkcję renderującą render.
+
+		*/
+
+
+		var owoce = ['Kiwi', 'Mango', 'Ananas', 'Grapefruit'];
+
+
+		//FIRST WAY
+
+		const newList = (myArray) => {
+
+			const body = document.querySelector('body');
+			let list = document.createElement('ol');
+			body.insertBefore(list, body.childNodes[0]);
+
+			myArray.forEach( (element, index, array) => { list.innerHTML += '<li>' + element + " (" + index + ")" + '</li>'})
+
+		}
+
+		newList(owoce)
+
+
+		
+		//RENDER FUNCTION
+
+		const render = (what, where) => {
+
+			what += '<ol>'
+			owoce.forEach( (element, index, array) => { what += '<li>' + element + " (" + index + ")" + '</li>'})
+			what += '</ol>'
+			where.innerHTML = what
+
+		}
+
+		let html = ''
+		let body = document.body
+		render(html, body)
+
+
+	</script>
+
+</body>
+</html>
