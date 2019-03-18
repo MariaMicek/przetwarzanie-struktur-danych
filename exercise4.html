@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Zadanie 4. Metoda .filter()</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+<body>
+
+	<script>
+
+		var owoce = ['Kiwi', 'Mango', 'Ananas', 'Grapefruit'];
+
+		/*
+
+		- Mając tablicę z owocami, przefiltruj ją w ten sposób, by zostały zwrócone tylko te jej elementy, których nazwa jest dłuższa bądź równa 6 znaków, a krótsza niż 10 znaków.
+		
+		- Wyprowadź na ekran otrzymane w ten sposób elementy, umieszczając je jako zawartość body. Dodatkowo, do tej zawartości doklej pod spodem informację o liczbie elementów spełniających kryteria. Otrzymaną w ten sposób liczbę wytłuść. Do tej zawartości doklej też pod spodem informację potwierdzającą, że przefiltrowane elementy są tablicą. Otrzymaną w ten sposób wartość logiczną wytłuść.
+		
+		- Skorzystaj z - wywoływanej na rzecz tablicy, którą chcemy przefiltrować - metody .filter().
+
+		- Wykorzystaj napisaną przez siebie funkcję renderującą render.
+
+		*/
+
+		let fruitFilter = owoce.filter((element, index, array) => element.length >= 6 && element.length < 10);
+		console.log(fruitFilter)
+
+		const render = (what, where) => {
+			what = owoce.filter((element, index, array) => element.length >= 6 && element.length < 10);
+			where.innerHTML = what + '<br>' + '<b>' + 'Amount of elements: ' + what.length + '<br>' + 'Is it an array? - ' + Array.isArray(what) + '</b>'
+		}
+
+		const filteredFruit = [];
+		const body = document.body
+		render(filteredFruit, body)
+
+
+	</script>
+
+</body>
+</html>
