@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Zadanie 7. Typ złożony &mdash; object (obiekt)</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+
+	<style>
+		
+		table { border-collapse: collapse; }
+		
+		table th { background-color: #f1f1f1; }
+
+		table th, table td { border: 1px solid #ccc; padding: 15px; }
+
+	</style>
+
+</head>
+<body>
+
+	<script>
+
+		var osoby = [
+			{
+				imie: 'Jan',
+				nazwisko: 'Kowalski',
+				wiek: 18,
+				imieNazwisko: function() { return this.imie + ' ' + this.nazwisko; }
+			},
+			{
+				imie: 'Maria',
+				nazwisko: 'Nowak',
+				wiek: 21,
+				imieNazwisko: function() { return this.imie + ' ' + this.nazwisko; }
+			}
+		];
+
+		/*
+
+		- Mając tablicę obiektów z osobami i nie usuwając z pliku żadnych istniejących stylów, wygeneruj dynamicznie tabelę HTML, umieszczając w poszczególnych komórkach jej wierszy dane dotyczące poszczególnych osób (tj. imię i nazwisko oraz wiek).
+
+		- Wykorzystaj napisaną przez siebie funkcję renderującą render.
+
+		*/
+
+		let table = '<table>';
+		table += '<tr><th>Imię i Nazwisko</th><th>Wiek</th>';
+
+		for (property in osoby) {
+
+			table += '<tr><td>' + osoby[property].imieNazwisko() + '</td><td>' + osoby[property].imieNazwisko() + '</td></tr>';
+		}
+
+		table += '</table>';
+
+		document.body.innerHTML = table;
+
+	</script>
+
+</body>
+</html>
