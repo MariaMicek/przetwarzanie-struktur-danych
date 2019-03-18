@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Zadanie 6. Metoda .find()</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+<body>
+
+	<script>
+
+		var owoce = ['Kiwi', 'Mango', 'Ananas', 'Grapefruit'];
+
+		/*
+
+		- Mając tablicę z owocami, zwróć pierwszy napotkany element tablicy, którego nazwa zaczyna się na "A". Otrzymany w ten sposób napis wytłuść. Poprzedź go napisem Pierwszą literą jest A: .
+		
+		- Wyprowadź na ekran otrzymany w ten sposób napis, umieszczając go jako zawartość body. Dodatkowo, doklej pod spodem informację o zwróconym typie danych. Otrzymany w ten sposób typ danych wytłuść.
+
+		- Skorzystaj z - wywoływanej na rzecz tablicy, z której chcemy zwrócić pierwszy napotkany element spełniający kryteria - metody .find().
+
+		- Wykorzystaj napisaną przez siebie funkcję renderującą render.
+
+		*/
+
+		const word = owoce.find((element, index, array) => element.startsWith('A'));
+		console.log(word)
+
+		const render = (what, where) => {
+
+			what =  owoce.find((element, index, array) => element.indexOf('A' === 0));
+			where.innerHTML = 'Pierwszą literą jest A: ' + '<b>' + what +'</br>' + 'Type of element: ' + typeof what + '</b>'
+
+		}
+
+		const body = document.body;
+		const wordA = '';
+		render(wordA, body)
+
+	</script>
+
+</body>
+</html>
