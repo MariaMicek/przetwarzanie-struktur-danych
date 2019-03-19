@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Zadanie 8. Metoda Object.keys()</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+<body>
+
+	<script>
+
+		var kontynenty = ['Europa', 'Ameryka Północna', 'Azja', 7, true];
+
+		/*
+		
+		- Mając tablicę z kontynentami, skorzystaj ze statycznej metody Object.keys(), by otrzymać tablicę, której elementami są indeksy poszczególnych elementów wyjściowej tablicy kontynenty.
+		
+		- Wynik operacji wyprowadź na ekran, korzystając z metody .log() obiektu console.
+
+		- Wykorzystaj napisaną przez siebie funkcję renderującą render.
+
+		*/
+
+
+		var continentsIndex = Object.keys(kontynenty);
+		console.log(continentsIndex);
+		console.log(typeof continentsIndex[0]);
+		console.log(typeof continentsIndex);
+		console.log('Is it an array? - ' + Array.isArray(continentsIndex));
+
+		function newArray (myObject) {
+			var index = Object.keys(myObject);
+			return index;
+		}
+
+		console.log(newArray(kontynenty));
+
+		const render = (what, where) => {
+			
+			where.innerHTML = 'This is a new array: ' + Object.keys(what); 
+			
+			}
+
+		const body = document.body;
+		const p = document.createElement('p');
+		body.insertBefore(p, body.childNodes[0]);
+		p.style.backgroundColor = 'lightblue'
+		p.style.padding = '15px'
+		p.style.textAlign = 'center'
+
+		render(kontynenty, p);
+	
+
+	</script>
+
+</body>
+</html>
