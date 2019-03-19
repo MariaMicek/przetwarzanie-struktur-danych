@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Zadanie 10. Metoda Object.entries()</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+<body>
+
+	<script>
+
+		var osoby = [
+			{
+				imie: 'Jan',
+				nazwisko: 'Kowalski',
+				wiek: 18,
+				imieNazwisko: function() { 
+					return this.imie + ' ' + this.nazwisko;
+				}
+			},
+			{
+				imie: 'Maria',
+				nazwisko: 'Nowak',
+				wiek: 21,
+				imieNazwisko: function() {
+					return this.imie + ' ' + this.nazwisko;
+				}
+			}
+		];
+
+		/*
+		
+		- Mając tablicę obiektów (tzn. tablicę, której elementami są obiekty), skorzystaj ze statycznej metody Object.entries(), by otrzymać tablicę, której elementami są nazwy oraz wartości poszczególnych elementów wyjściowej tablicy obiektów osoby.
+		
+		- Wynik operacji wyprowadź na ekran, korzystając z metody .log() obiektu console.
+
+		- Wykorzystaj napisaną przez siebie funkcję renderującą render.
+
+		*/
+
+		console.log(Object.entries(osoby))
+
+		const array1 = Object.entries(osoby[0]);
+		console.log(array1);
+
+		const array2 = Object.entries(osoby[1]);
+		console.log(array2);
+
+		const newArray = [];
+		console.log(newArray.concat(array1, array2));
+
+
+		const render = a => {
+			const array1 = Object.entries(a[0]);
+			const array2 = Object.entries(a[1]);
+			const newArray = [];
+			console.log(newArray.concat(array1, array2));
+		}
+
+		render(osoby)
+
+	</script>
+
+</body>
+</html>
