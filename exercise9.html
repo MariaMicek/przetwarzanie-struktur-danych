@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Zadanie 9. Metoda Object.keys()</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="Author" content="Łukasz Krawczyk (Web Developer / Graphic &amp; Web Designer)" />
+</head>
+<body>
+
+	<script>
+
+		var napis = 'Lorem ipsum dolor sit amet...';
+
+		/*
+		
+		- Mając ciąg znaków, skorzystaj ze statycznej metody Object.values(), by otrzymać tablicę, której elementami są poszczególne znaki wyjściowego literału łańcuchowego napis.
+		
+		- Wynik operacji wyprowadź na ekran, korzystając z metody .log() obiektu console.
+
+		- Wykorzystaj napisaną przez siebie funkcję renderującą render.
+
+		*/
+
+		const arrayNapis = Object.values(napis);
+		console.log(arrayNapis);
+
+		const render = (what, where) => {
+
+			what.innerHTML = 'New content: ' + '<strong>' + Object.values(napis) + '</strong>';
+			where.insertBefore(p, body.children[0])
+
+		}
+
+		const p = document.createElement('p');
+		const body = document.querySelector('body');
+		render(p, body)
+
+	</script>
+
+</body>
+</html>
